@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: antiquewhite;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <script>
+    let startTime
+    function move(timestamp) {
+      const node = document.querySelector('div')
+      if (startTime === undefined) {
+        startTime = timestamp
+      }
+      const elapsed = timestamp - startTime
+      console.log(elapsed)
+
+      node.style.transform = `translateX(${Math.min(elapsed*0.1, 200)}px)`
+      if (elapsed < 2000) {
+        window.requestAnimationFrame(move)
+      }
+    }
+
+    window.requestAnimationFrame(move)
+  </script>
+</body>
+</html>
