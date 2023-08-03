@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      async function fetchData() {
+        console.log(111)
+        const res = await fetch("http://127.0.0.1:3000/qqq");
+        console.log('res: ', res);
+      }
+
+      function run(asyncFunc) {
+        const cache = {
+          status: "pending",
+          value: null,
+        };
+        const oldFetch = window.fetch;
+        window.fetch = function (...args) {
+          if (cache.status === "fulfilled") {
+            return cache.value;
+          } else if (cache.status === "rejected") {
+            throw cache.value;
+          } else {
+            const promise = oldFetch(...args)
+              .then((res) => {
+                cache.status = "fulfilled";
+                cache.value = res;
+              })
+              .catch((err) => {
+                cache.status = "rejected";
+                cache.value = err;
+              });
+              console.log(111111)
+            throw promise;
+          }
+        };
+
+        try {
+          asyncFunc();
+        } catch (err) {
+          if (err instanceof Promise) {
+            err.then(asyncFunc, asyncFunc).finally(() => {
+              window.fetch = oldFetch;
+            });
+          }
+        }
+      }
+
+      run(fetchData)
+    </script>
+  </body>
+</html>
