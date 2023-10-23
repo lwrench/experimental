@@ -201,3 +201,8 @@
 
 ### 2023-10-09
 [前端八股](https://github.com/sisterAn/blog)
+
+### 2023-10-23
+[go实现redis](https://www.cnblogs.com/Finley/category/1598973.html)
+
+[后端八股](https://xiaolincoding.com/)
