@@ -3,16 +3,21 @@ const webpack = require('webpack')
 
 module.exports = {
   mode: 'development',
-  entry: "./src/index.js",
+  entry: {
+    index: {
+      import: "./src/index.js",
+      runtime: "runtime"
+    }
+  },
   devtool: 'eval-source-map',
   experiments: {
     outputModule: true,
   },
   output: {
-    clean: true,
+    // clean: true,
     library: {type: 'module'},
     path: path.resolve(__dirname, 'dist'),
-    filename: 'vendor.js'
+    filename: '[name].bundle.js'
   },
   plugins: [
     new webpack.ProgressPlugin((percentage, msg, ...args) => {
