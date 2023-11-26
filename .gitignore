@@ -1,5 +1,6 @@
 node_modules
 dist
 .vscode
+.obsidian
 
 !webpack/dist
