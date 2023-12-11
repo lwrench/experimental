@@ -210,3 +210,6 @@
 ### 2023-11-13
 [jest-bundler](https://cpojer.net/posts/building-a-javascript-bundler)
 
+### 2023-12-11
+[并发控制](https://mp.weixin.qq.com/s/6LsPMIHdIOw3KO6F2sgRXg)
+
