@@ -9,6 +9,8 @@
 [React 组件库实现细节](https://github.com/lio-mengxiang/mx-design/issues/15)
 
 [Element Plus 实现细节](https://juejin.cn/column/7140176895999475725)
+
+[Async Validator](https://juejin.cn/post/7249299811497066551)
 ### webpack
 
 ### Vite
