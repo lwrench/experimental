@@ -1,12 +1,14 @@
 ## 框架
 
 ### React
-https://7km.top/
+[图解React17](https://7km.top/)
 
 ## 工程化
 
 ### 组件库
-https://github.com/lio-mengxiang/mx-design/issues/15
+[React 组件库实现细节](https://github.com/lio-mengxiang/mx-design/issues/15)
+
+[Element Plus 实现细节](https://juejin.cn/column/7140176895999475725)
 ### webpack
 
 ### Vite
